@@ -14,7 +14,7 @@ return {
 			version = { 1, 0, 0 },
 			type 	= "tarball",
 			url 	= "https://example.com/example-dependency.tar.gz",
-			debug = true
+			debug 	= true
 		},
 		["my-optional-dependency"] = {
 			version 	= { 1, 0, 0 },
@@ -31,5 +31,14 @@ return {
 			jobs = 4
 		}
 		if err then error("Could not build package!\n" .. "Error: " .. err) end
+	end,
+
+	on_install = function (package)
+		local stat, err = tools.make {
+			target = "install",
+			prefix = package.installation.prefix,
+			jobs = 4
+		}
+		if err then error("Could not install package!\n" .. "Error: " .. err) end
 	end
 }
