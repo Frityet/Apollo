@@ -6,8 +6,8 @@ return {
 	license 		= "MIT",
 	description 	= "Example project",
 	lua_versions	= {
-		"LuaJIT",
-		"Lua 5.1",
+		"JIT",
+		"5.1",
 	},
 	dependencies 	= {
 		["manditory-dependency"] = {
