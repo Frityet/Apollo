@@ -1,4 +1,4 @@
-local Cli = require "cli/cli"
+local Cli = require "cli.cli"
 
 
 Cli()
