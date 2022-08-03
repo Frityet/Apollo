@@ -30,7 +30,7 @@ function Cli()
         print(c_add.AddCommand.Name .. "       " .. c_add.AddCommand.Description)
         print(c_remove.RemoveCommand.Name .. "    " .. c_remove.RemoveCommand.Description)
         print(c_run.RunCommand.Name .. "       " .. c_run.RunCommand.Description)
-        print(c_build.BuildCommand.Name .. "       " .. c_build.BuildCommand.Description)
+        print(c_build.BuildCommand.Name .. "     " .. c_build.BuildCommand.Description)
         return
     --[[ need to impl ]] elseif arg[1] == "--version" then
         print(Lpm.name .. " v" .. Lpm.version)
