@@ -1,19 +1,15 @@
-local package = {
+---@class Package
+local export = {
+	package_version = 1,
 	name 			= "",
-	version 		= { major = 0, minor = 0, patch = 0 },
-	authors 		= {  },
+	version 		= {},
+	authors 		= {},
 	license 		= "",
 	description 	= "",
-	homepage 		= "",
-	repository 		= "",
-	dependencies 	= {
-		optional 	= {}
-	},
-
-	installation = {
-		
-	}
+	lua_versions	= {},
+	dependencies 	= {},
+	on_build = function(package) end,
+	on_install = function (package) end,
 }
 
-
-return package
+return export
