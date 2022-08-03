@@ -9,9 +9,7 @@ local export = {
 	lua_versions    = {},
 	dependencies    = {},
 	on_build        = function(package) end,
-	on_install      = function(package)
-		print("Installing " .. package.name)
-	end,
+	on_install      = function(package) end,
 }
 
 return export
