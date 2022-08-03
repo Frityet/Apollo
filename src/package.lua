@@ -1,5 +1,6 @@
 ---@class Package
 local export = {
+	package_version = 1,
 	name 			= "",
 	version 		= {},
 	authors 		= {},
