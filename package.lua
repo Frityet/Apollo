@@ -6,10 +6,12 @@ return {
 	license 		= "GPLv3",
 	author 			= { name = "Amrit Bhogal", email = "ambhogal01@gmail.com" },
 	homepage 		= "https://github.com/Frityet/Apollo",
-	dependencies 	= {
-		"luvit/luvit",
+	dependencies = {
+		"luvit/require",
+		"luvit/fs", 
+		"creationix/coro-http"
 	},
-	files 			= {
+	files = {
 		"**.lua",
 		"!test*"
 	}

@@ -12,5 +12,12 @@
 		"type-check": 	"Error",
 		"unbalanced": 	"Error"
 	},
-	"runtime.pathStrict": true
+	"runtime.pathStrict": true,
+	"runtime.path": [
+		"?.lua",
+		"?/init.lua",
+		"deps/?.lua",
+		"deps/?/init.lua"
+	],
+	"runtime.version": "LuaJIT"
 }

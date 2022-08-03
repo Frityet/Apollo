@@ -8,7 +8,7 @@ local export = {
 	description 	= "",
 	lua_versions	= {},
 	dependencies 	= {},
-	on_build 		= function(package) end,
+	on_build 		= function (package) end,
 	on_install 		= function (package) end,
 }
 

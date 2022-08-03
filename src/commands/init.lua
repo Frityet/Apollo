@@ -1,3 +1,0 @@
-return {
-	Command = require("command")
-}
