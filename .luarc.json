@@ -1,0 +1,16 @@
+{
+	"diagnostics.groupSeverity": {
+		"ambiguity": 	"Error",
+		"await": 		"Error",
+		"codestyle": 	"Error",
+		"duplicate": 	"Error",
+		"global": 		"Error",
+		"luadoc": 		"Error",
+		"redefined": 	"Error",
+		"strict": 		"Error",
+		"strong": 		"Error",
+		"type-check": 	"Error",
+		"unbalanced": 	"Error"
+	},
+	"runtime.pathStrict": true
+}
