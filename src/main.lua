@@ -10,12 +10,17 @@ local c_run = require "commands/run"
 local c_build = require "commands/build"
 Lpm = {
     name = "lpm",
-    version = "1.0.0"
+    version = "1.0.0",
+    description = "A next generation package manager for lua"
 }
 
 function Cli()
     if arg[1] == "--help" then
         print("Usage: " .. Lpm.name .. " command [options]")
+        print("\n"..Lpm.description)
+        print("\nOptions:")
+        print("--version output the version number")
+        print("--help    output usage information")
         print("\nCommands:")
         print(c_init.InitCommand.Name .. "      " .. c_init.InitCommand.Description)
         print(c_install.InstallCommand.Name .. "   " .. c_install.InstallCommand.Description)
