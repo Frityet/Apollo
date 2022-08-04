@@ -1,2 +1,3 @@
-deps
+deps/
 
+.vscode/settings.json

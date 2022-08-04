@@ -4,12 +4,8 @@ arg = { [0] = "", unpack(args) }
 ---@class ArgumentParser
 local ArgumentParser = require("argparse")
 
-local print = require("pretty-print").prettyPrint
-
 ---@module "actions"
 local actions = require("./actions")
-
---#region Command line argument parsing
 
 local cmdparser = ArgumentParser() {
 	name 			= "Apollo",
@@ -20,9 +16,11 @@ local cmdparser = ArgumentParser() {
 cmdparser:add_complete()
 
 local commands = {}
+---Adds a command to the parser, with its options and arguments.
+---@param name string The name of the command.
+---@return fun(args: { commands: { [string]: {} }, options: { [string]: {} }? }): nil
 function commands:add(name)
 	commands[name] = cmdparser:command(name)
-
 	---@param args { commands: { [string]: {} }, options: { [string]: {} }? }
 	return function (args)
 		for k, v in pairs(args.commands) do
@@ -133,7 +131,5 @@ commands:add("info") {
 
 ---@type { action: string, install: boolean, package: string, [string]: string | number | boolean }
 local args = cmdparser:parse(arg)
-
---#endregion
 
 actions[args.action](args)

@@ -17,7 +17,10 @@
 		"?.lua",
 		"?/init.lua",
 		"deps/?.lua",
-		"deps/?/init.lua"
+		"deps/?/init.lua",
+		"libs/?.lua",
+		"libs/?/init.lua"
 	],
+	"workspace.useGitIgnore": false,
 	"runtime.version": "LuaJIT"
 }
