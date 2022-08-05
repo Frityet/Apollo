@@ -8,8 +8,9 @@ return {
 	homepage 		= "https://github.com/Frityet/Apollo",
 	dependencies = {
 		"luvit/require",
-		"luvit/fs", 
-		"creationix/coro-http"
+		"luvit/fs",
+		"luvit/secure-socket",
+		"creatiolnix/coro-http"
 	},
 	files = {
 		"**.lua",

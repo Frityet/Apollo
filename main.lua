@@ -1,6 +1,8 @@
 ---@diagnostic disable-next-line 
 arg = { [0] = "", unpack(args) }
 
+local https = require("https")
+
 ---@class ArgumentParser
 local ArgumentParser = require("argparse")
 
@@ -132,4 +134,6 @@ commands:add("info") {
 ---@type { action: string, install: boolean, package: string, [string]: string | number | boolean }
 local args = cmdparser:parse(arg)
 
-actions[args.action](args)
+coroutine.wrap(function ()
+	actions[args.action](args)
+end)()
