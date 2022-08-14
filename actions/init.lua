@@ -1,6 +1,6 @@
 return {
 	---@module "actions.initialise"
-	initalise 	= require("./initialise"),
+	initialise 	= require("./initialise"),
 	---@module "actions.install"
 	install 	= require("./install"),
 	---@module "actions.uninstall"
