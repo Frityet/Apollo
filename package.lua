@@ -10,7 +10,7 @@ return {
 		"luvit/require",
 		"luvit/fs",
 		"luvit/secure-socket",
-		"creatiolnix/coro-http"
+		"luvit/https"
 	},
 	files = {
 		"**.lua",

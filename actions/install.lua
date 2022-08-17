@@ -1,14 +1,32 @@
 local print = require("pretty-print").prettyPrint
+local fs = require("fs")
+local https = require("https")
 
----@module "net.async-request"
-local RequestQueue = require("../net/async-request")
-
----@param args {  }
+---@param args { action: string, install: boolean, package: string }
 return function (args)
-	local queue = RequestQueue.create()
-	local reqs = {
-		queue:add("GET", "https://gist.githubusercontent.com/truemedian/9f52aedd31ab5952da980b0e02b3a3d8/raw/d3b42159ddc7d0d9d2523eb62720b18b66570832/dload.lua")
-	}
+    local stream = fs.createWriteStream("file")
+    local recv, total = 0, 0
+    local done = false
+    local chunks = {}
 
-	queue:wait()
+    https.get("https://mirror.alpix.eu/endeavouros/iso/EndeavourOS_Artemis_neo_22_7.iso", function (response)
+        response:on("error", function (err)
+            return error(err, 1)
+        end)
+
+        response:on("response", function (data)
+            total = tonumber(data.headers["content-length"]) or 1
+        end)
+
+        response:on("data", function (chunk)
+            recv = recv + chunk.length
+            chunks[#chunks + 1] = chunk
+        end)
+
+        response:on("end", function ()
+            done = true
+        end)
+    end)
+
+    repeat io.write("\x1b[33m", tostring(math.floor(recv / total) * 100) , "%\t\r") until done
 end
