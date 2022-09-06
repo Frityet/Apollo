@@ -22,5 +22,8 @@
 		"libs/?/init.lua"
 	],
 	"workspace.useGitIgnore": false,
-	"runtime.version": "LuaJIT"
+	"runtime.version": "LuaJIT",
+	"workspace.ignoreDir": [
+		"example"
+	]
 }

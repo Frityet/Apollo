@@ -1,7 +1,7 @@
 ---@diagnostic disable-next-line 
 arg = { [0] = "", unpack(args) }
 
-local https = require("https")
+local uv = require("uv")
 
 ---@class ArgumentParser
 local ArgumentParser = require("argparse")
@@ -137,3 +137,5 @@ local args = cmdparser:parse(arg)
 coroutine.wrap(function ()
 	actions[args.action](args)
 end)()
+
+uv.run()
