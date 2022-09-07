@@ -24,6 +24,6 @@
 	"workspace.useGitIgnore": false,
 	"runtime.version": "LuaJIT",
 	"workspace.ignoreDir": [
-		"example"
+		// "example"
 	]
 }

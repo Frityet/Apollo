@@ -1,8 +1,10 @@
-local print = require("pretty-print").prettyPrint
-local fs = require("fs")
-local https = require("https")
+local http = require("coro-http")
 
----@param args { action: string, install: boolean, package: string }
+---@param args { package: string }
 return function (args)
-    
+    local head, body = http.request("GET", args.package)
+
+    print(head)
+
+    return body
 end
